@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================
+     STEP 1: CHANGE THESE THREE LINES
+     ============================================ -->
+<meta name="description" content="WRITE A ONE SENTENCE SUMMARY OF YOUR ARTICLE HERE">
+<meta name="keywords" content="ADD, YOUR, KEYWORDS, HERE, separated by commas">
+<title>YOUR ARTICLE TITLE HERE | Dr. Sunny Okonkwo</title>
+<!-- ============================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9973B;--gold-dim:rgba(201,151,59,0.12);--gold-border:rgba(201,151,59,0.35);--dark:#080808;--dark2:#0F0F0F;--dark3:#161616;--dark4:#1E1E1E;--border:rgba(201,151,59,0.18);--text:#EDE7DA;--muted:rgba(237,231,218,0.55);--muted2:rgba(237,231,218,0.78);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--gold)}
+nav{position:fixed;top:0;width:100%;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw;background:rgba(8,8,8,0.95);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:1rem;color:var(--gold);text-decoration:none;font-weight:600}
+.nav-logo span{font-weight:400;font-style:italic}
+.nav-back{font-size:0.78rem;color:var(--muted);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}
+.nav-back:hover{color:var(--gold)}
+.article-hero{padding:8rem 5vw 4rem;max-width:800px;margin:0 auto}
+.article-tag{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.article-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem}
+.article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;padding:1.2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem}
+.article-meta span{font-size:0.8rem;color:var(--muted)}
+.article-meta strong{color:var(--gold);font-weight:400}
+.article-body{max-width:800px;margin:0 auto;padding:0 5vw 6rem}
+.article-body h2{font-family:var(--serif);font-size:1.7rem;font-weight:700;margin:2.5rem 0 1rem;color:var(--text)}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:2rem 0 0.8rem;color:var(--gold)}
+.article-body p{font-size:0.97rem;color:var(--muted2);line-height:1.9;margin-bottom:1.3rem}
+.article-body strong{color:var(--text);font-weight:500}
+.article-body ul,.article-body ol{margin:1rem 0 1.3rem 1.5rem;color:var(--muted2)}
+.article-body li{margin-bottom:0.5rem;font-size:0.95rem;line-height:1.8}
+.article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--dark3);border-radius:0 4px 4px 0}
+.article-body blockquote p{color:var(--muted2);font-style:italic;margin:0}
+.cta-box{background:var(--dark3);border:0.5px solid var(--gold-border);padding:2.5rem;border-radius:2px;margin:3rem 0;text-align:center}
+.cta-box h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:0.8rem}
+.cta-box p{color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;max-width:50ch;margin-left:auto;margin-right:auto}
+.btn-gold{display:inline-block;padding:0.8rem 1.8rem;background:var(--gold);color:var(--dark);text-decoration:none;font-weight:500;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:1px;transition:opacity 0.2s;margin:0.3rem}
+.btn-gold:hover{opacity:0.85}
+.btn-ghost{display:inline-block;padding:0.8rem 1.8rem;border:1px solid var(--gold-border);color:var(--gold);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:1px;transition:border-color 0.2s}
+.btn-ghost:hover{border-color:var(--gold)}
+.author-box{display:flex;gap:1.5rem;align-items:flex-start;padding:2rem;background:var(--dark3);border:0.5px solid var(--border);border-radius:2px;margin:3rem 0}
+.author-box img{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;flex-shrink:0}
+.author-box h4{font-family:var(--serif);font-size:1rem;margin-bottom:0.3rem}
+.author-box p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+footer{padding:2rem 5vw;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;gap:0.5rem}
+footer a{color:var(--gold);text-decoration:none}
+@media(max-width:700px){.article-hero{padding:7rem 5vw 2rem}.author-box{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html"><span>Dr. </span>Sunny Okonkwo</a>
+  <a class="nav-back" href="index.html">← All Articles</a>
+</nav>
+
+<!-- ============================================
+     STEP 2: FILL IN YOUR ARTICLE DETAILS
+     ============================================ -->
+<div class="article-hero">
+  <span class="article-tag">YOUR CATEGORY HERE</span>
+  <!-- Examples: AI Strategy · Energy Sector · Decision Intelligence · Digital Transformation · Leadership -->
+
+  <h1>YOUR FULL ARTICLE TITLE GOES HERE</h1>
+
+  <div class="article-meta">
+    <span>By <strong>Dr. Sunny Okonkwo</strong></span>
+    <span>MONTH YEAR</span>         <!-- e.g. May 2026 -->
+    <span>X min read</span>         <!-- e.g. 6 min read -->
+    <span>TOPIC · TOPIC</span>      <!-- e.g. AI Strategy · Energy -->
+  </div>
+</div>
+<!-- ============================================ -->
+
+
+<!-- ============================================
+     STEP 3: WRITE YOUR ARTICLE CONTENT HERE
+     Everything between these comments is your article.
+     ============================================ -->
+<div class="article-body">
+
+  <!-- OPENING PARAGRAPH — Hook the reader -->
+  <p>Write your opening paragraph here. This should hook the reader immediately. Make a bold statement, share a surprising fact, or open with a real experience from your work.</p>
+
+  <p>Second paragraph continues the setup. Give context. Why does this topic matter right now?</p>
+
+
+  <!-- MAIN SECTION HEADING -->
+  <h2>Your First Main Section Heading</h2>
+
+  <p>Write your section content here. Keep paragraphs focused — one idea per paragraph works best.</p>
+
+  <p>Add more paragraphs as needed.</p>
+
+
+  <!-- SUBHEADING (smaller, gold coloured) -->
+  <h3>A Subpoint or Subheading</h3>
+
+  <p>Content under the subheading.</p>
+
+
+  <!-- QUOTE BLOCK — Use for key insights -->
+  <blockquote>
+    <p>Your most powerful insight or key takeaway from this section goes here as a pull quote.</p>
+  </blockquote>
+
+
+  <!-- BULLET LIST — Use for numbered points or lists -->
+  <ul>
+    <li>First point</li>
+    <li>Second point</li>
+    <li>Third point</li>
+  </ul>
+
+
+  <!-- ADD MORE SECTIONS AS NEEDED — Just copy h2/h3/p blocks -->
+  <h2>Your Second Main Section</h2>
+
+  <p>Continue writing here...</p>
+
+
+  <h2>Conclusion or Closing Thought</h2>
+
+  <p>End with something memorable. What is the one thing you want the reader to take away and do?</p>
+
+</div>
+<!-- ============================================ -->
+
+
+<!-- CTA BOX — Do not change this -->
+<div class="article-body">
+<div class="cta-box">
+  <h3>Work With Dr. Sunny Okonkwo</h3>
+  <p>Looking to deploy AI in your organisation or book a keynote speaker? Let's talk.</p>
+  <a href="https://calendly.com/okonkwosunny/discovery-call-with-dr-sunny-okonkwo" class="btn-gold" target="_blank">📅 Book a Free Discovery Call</a>
+  <a href="../consulting.html" class="btn-ghost">View Consulting Packages</a>
+</div>
+
+<!-- AUTHOR BOX — Do not change this -->
+<div class="author-box">
+  <img src="../profile.png" alt="Dr. Sunny Okonkwo" />
+  <div>
+    <h4>Dr. Sunny Okonkwo</h4>
+    <p>AI Strategist · Decision Intelligence Expert · Digital Transformation Leader. Head of Data Analytics at one of Africa's largest energy and utility companies. Author of 7 books including the #1 International Bestseller <em>The AI Alchemist</em>. Keynote speaker at IIBA Conference, Big Data Summit Canada, Global Summit, and UNICAF.</p>
+  </div>
+</div>
+</div>
+
+
+<!-- ============================================
+     STEP 4: ADD 3 RELATED ARTICLE LINKS
+     Change the href, title, and description below
+     ============================================ -->
+<div style="padding:4rem 5vw;background:#0F0F0F;border-top:0.5px solid rgba(201,151,59,0.18)">
+  <h2 style="font-family:var(--serif);font-size:1.6rem;margin-bottom:2rem;text-align:center;color:#EDE7DA">More From Dr. Sunny Okonkwo</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;max-width:900px;margin:0 auto">
+
+    <a href="ARTICLE-FILENAME.html" style="background:#161616;border:0.5px solid rgba(201,151,59,0.18);padding:1.5rem;border-radius:2px;text-decoration:none;display:block;transition:border-color 0.2s" onmouseover="this.style.borderColor='#C9973B'" onmouseout="this.style.borderColor='rgba(201,151,59,0.18)'">
+      <span style="font-size:0.65rem;letter-spacing:0.15em;color:#C9973B;text-transform:uppercase;margin-bottom:0.5rem;display:block">CATEGORY</span>
+      <h3 style="font-family:var(--serif);font-size:1rem;color:#EDE7DA;line-height:1.4;margin-bottom:0.5rem">RELATED ARTICLE TITLE 1</h3>
+      <p style="font-size:0.78rem;color:rgba(237,231,218,0.55);line-height:1.6">Brief description of the article.</p>
+    </a>
+
+    <a href="ARTICLE-FILENAME.html" style="background:#161616;border:0.5px solid rgba(201,151,59,0.18);padding:1.5rem;border-radius:2px;text-decoration:none;display:block;transition:border-color 0.2s" onmouseover="this.style.borderColor='#C9973B'" onmouseout="this.style.borderColor='rgba(201,151,59,0.18)'">
+      <span style="font-size:0.65rem;letter-spacing:0.15em;color:#C9973B;text-transform:uppercase;margin-bottom:0.5rem;display:block">CATEGORY</span>
+      <h3 style="font-family:var(--serif);font-size:1rem;color:#EDE7DA;line-height:1.4;margin-bottom:0.5rem">RELATED ARTICLE TITLE 2</h3>
+      <p style="font-size:0.78rem;color:rgba(237,231,218,0.55);line-height:1.6">Brief description of the article.</p>
+    </a>
+
+    <a href="ARTICLE-FILENAME.html" style="background:#161616;border:0.5px solid rgba(201,151,59,0.18);padding:1.5rem;border-radius:2px;text-decoration:none;display:block;transition:border-color 0.2s" onmouseover="this.style.borderColor='#C9973B'" onmouseout="this.style.borderColor='rgba(201,151,59,0.18)'">
+      <span style="font-size:0.65rem;letter-spacing:0.15em;color:#C9973B;text-transform:uppercase;margin-bottom:0.5rem;display:block">CATEGORY</span>
+      <h3 style="font-family:var(--serif);font-size:1rem;color:#EDE7DA;line-height:1.4;margin-bottom:0.5rem">RELATED ARTICLE TITLE 3</h3>
+      <p style="font-size:0.78rem;color:rgba(237,231,218,0.55);line-height:1.6">Brief description of the article.</p>
+    </a>
+
+  </div>
+</div>
+<!-- ============================================ -->
+
+
+<footer>
+  <span>&#169; 2026 Dr. Sunny Okonkwo &middot; <a href="../index.html">drsunnyokonkwo.com</a></span>
+  <span><a href="mailto:sunnyo@drsunnyokonkwo.com">sunnyo@drsunnyokonkwo.com</a> &middot; <a href="../consulting.html">Consulting</a></span>
+</footer>
+</body>
+</html>

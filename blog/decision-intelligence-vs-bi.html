@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9973B;--gold-dim:rgba(201,151,59,0.12);--gold-border:rgba(201,151,59,0.35);
+  --dark:#080808;--dark2:#0F0F0F;--dark3:#161616;--dark4:#1E1E1E;
+  --border:rgba(201,151,59,0.18);
+  --text:#EDE7DA;--muted:rgba(237,231,218,0.55);--muted2:rgba(237,231,218,0.78);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Outfit',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+nav{position:fixed;top:0;width:100%;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw;background:rgba(8,8,8,0.95);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:1rem;color:var(--gold);text-decoration:none;font-weight:600}
+.nav-logo span{font-weight:400;font-style:italic}
+.nav-back{font-size:0.78rem;color:var(--muted);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}
+.nav-back:hover{color:var(--gold)}
+.article-hero{padding:8rem 5vw 4rem;max-width:800px;margin:0 auto}
+.article-tag{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.article-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem}
+.article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;padding:1.2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem}
+.article-meta span{font-size:0.8rem;color:var(--muted)}
+.article-meta strong{color:var(--gold);font-weight:400}
+.article-body{max-width:800px;margin:0 auto;padding:0 5vw 6rem}
+.article-body h2{font-family:var(--serif);font-size:1.7rem;font-weight:700;margin:2.5rem 0 1rem;color:var(--text)}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:2rem 0 0.8rem;color:var(--gold)}
+.article-body p{font-size:0.97rem;color:var(--muted2);line-height:1.9;margin-bottom:1.3rem}
+.article-body strong{color:var(--text);font-weight:500}
+.article-body ul,.article-body ol{margin:1rem 0 1.3rem 1.5rem;color:var(--muted2)}
+.article-body li{margin-bottom:0.5rem;font-size:0.95rem;line-height:1.8}
+.article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--dark3);border-radius:0 4px 4px 0}
+.article-body blockquote p{color:var(--muted2);font-style:italic;margin:0}
+.cta-box{background:var(--dark3);border:0.5px solid var(--gold-border);padding:2.5rem;border-radius:2px;margin:3rem 0;text-align:center}
+.cta-box h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:0.8rem}
+.cta-box p{color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;max-width:50ch;margin-left:auto;margin-right:auto}
+.btn-gold{display:inline-block;padding:0.8rem 1.8rem;background:var(--gold);color:var(--dark);text-decoration:none;font-weight:500;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:1px;transition:opacity 0.2s;margin:0.3rem}
+.btn-gold:hover{opacity:0.85}
+.btn-ghost{display:inline-block;padding:0.8rem 1.8rem;border:1px solid var(--gold-border);color:var(--gold);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:1px;transition:border-color 0.2s}
+.btn-ghost:hover{border-color:var(--gold)}
+.author-box{display:flex;gap:1.5rem;align-items:flex-start;padding:2rem;background:var(--dark3);border:0.5px solid var(--border);border-radius:2px;margin:3rem 0}
+.author-box img{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;flex-shrink:0}
+.author-box h4{font-family:var(--serif);font-size:1rem;margin-bottom:0.3rem}
+.author-box p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+.related-posts{padding:4rem 5vw;background:var(--dark2);border-top:0.5px solid var(--border)}
+.related-posts h2{font-family:var(--serif);font-size:1.6rem;margin-bottom:2rem;text-align:center}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+.related-card{background:var(--dark3);border:0.5px solid var(--border);padding:1.5rem;border-radius:2px;text-decoration:none;display:block;transition:border-color 0.2s}
+.related-card:hover{border-color:var(--gold)}
+.related-card .rc-tag{font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;display:block}
+.related-card h3{font-family:var(--serif);font-size:1rem;color:var(--text);line-height:1.4;margin-bottom:0.5rem}
+.related-card p{font-size:0.78rem;color:var(--muted);line-height:1.6}
+footer{padding:2rem 5vw;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;gap:0.5rem}
+footer a{color:var(--gold);text-decoration:none}
+@media(max-width:700px){.article-hero{padding:7rem 5vw 2rem}.author-box{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html"><span>Dr. </span>Sunny Okonkwo</a>
+  <a class="nav-back" href="index.html">← All Articles</a>
+</nav>
+<div class="article-hero">
+  <span class="article-tag">Decision Intelligence</span>
+  <h1>Decision Intelligence vs Business Intelligence: The Difference That Determines Whether Your Data Investment Changes Anything</h1>
+  <div class="article-meta">
+    <span>By <strong>Dr. Sunny Okonkwo</strong></span>
+    <span>April 2026</span>
+    <span>7 min read</span>
+    <span>Decision Intelligence · Analytics</span>
+  </div>
+</div>
+<div class="article-body">
+<p>Most organisations that invest in data and analytics invest in Business Intelligence. They build dashboards. They create reports. They implement data warehouses and visualisation tools. They track KPIs. These are valuable capabilities. But they are also, in many organisations, entirely disconnected from how decisions actually get made. The reports exist. The decisions ignore them.</p>
+<p>Decision Intelligence is a different discipline. It is not a replacement for Business Intelligence — it is what Business Intelligence should be aiming to become. Understanding the distinction is essential for any executive who wants their data investment to produce operational change rather than analytical output.</p>
+
+<h2>What Business Intelligence Actually Does</h2>
+<p>Business Intelligence answers the question: what happened? It aggregates data from operational systems, processes it into consistent metrics, and presents those metrics in formats that allow humans to understand the past and present state of the organisation. Done well, BI eliminates information asymmetries, surfaces performance gaps, and enables fact-based conversations about organisational performance.</p>
+<p>The limitation of BI is that it stops at information. It tells you that feeder F-07 had 23 faults last month. It does not tell you what to do about it. The leap from information to action requires human judgment — and human judgment, operating under time pressure with competing priorities, frequently ignores even excellent BI outputs.</p>
+
+<h2>What Decision Intelligence Does Differently</h2>
+<p>Decision Intelligence starts not with data but with decisions. It asks: what specific choices does this organisation need to make, and how can data, analytics, and AI improve the quality and speed of those choices?</p>
+<blockquote><p>Business Intelligence tells you what is happening. Decision Intelligence tells you what to do about it — and builds the organisational systems to make sure something actually gets done.</p></blockquote>
+<p>The practical difference is significant. A BI system shows a network operations manager a dashboard with fault frequency by feeder. A Decision Intelligence system tells that manager, at 6am, which three feeders are most likely to cause a customer-impacting fault today, why the model believes this, and what the recommended preventive action is — pre-populated in the work order system, ready for dispatch authorisation with a single click.</p>
+<p>Same underlying data. Completely different operational impact.</p>
+
+<h2>The Four Components of Decision Intelligence</h2>
+<h3>1. Decision Architecture</h3>
+<p>Mapping the key decisions the organisation makes — who makes them, how frequently, what information they currently use, what the cost of a wrong decision is, and where data could improve the decision quality. This is analytical work that requires deep business knowledge, not just data skills.</p>
+
+<h3>3. Predictive and Prescriptive Analytics</h3>
+<p>Moving beyond descriptive analytics (what happened) to predictive analytics (what will happen) and prescriptive analytics (what should we do). This is where machine learning and AI contribute most directly — not by replacing human judgment but by improving the information on which human judgment operates.</p>
+
+<h3>3. Decision Integration</h3>
+<p>Building the interfaces, workflows, and processes that connect analytical outputs to decision moments. The best model in the world produces no value if its outputs arrive in an email that the relevant decision maker reads three days after the decision was made. Decision integration is the engineering work that closes the gap between analysis and action.</p>
+
+<h3>4. Decision Governance</h3>
+<p>Establishing accountability for decision quality over time. Who is responsible when an AI-assisted decision produces a bad outcome? How are models monitored and updated as conditions change? How is the organisation learning from decision outcomes to improve future decision processes? These governance questions are essential for any Decision Intelligence system that operates at scale.</p>
+
+<h2>Where to Start</h2>
+<p>The transition from BI to Decision Intelligence does not require abandoning existing investments. It requires reframing them. Take your most used dashboard. Identify the decision it is meant to support. Ask whether the person who makes that decision actually uses the dashboard at the moment of decision, or whether they have already made the decision by the time they look at the report.</p>
+<p>If the answer is the latter — and in most organisations it will be — you have identified a Decision Intelligence opportunity. The goal is not a better dashboard. The goal is a system that puts the right information in front of the right person at the right moment in the right format to improve the quality of a specific decision. That is Decision Intelligence. That is what changes operations.</p>
+<div class="cta-box">
+  <h3>Work With Dr. Sunny Okonkwo</h3>
+  <p>Looking to deploy AI in your organisation or book a keynote speaker? Let's talk.</p>
+  <a href="https://calendly.com/okonkwosunny/discovery-call-with-dr-sunny-okonkwo" class="btn-gold" target="_blank">📅 Book a Free Discovery Call</a>
+  <a href="../consulting.html" class="btn-ghost">View Consulting Packages</a>
+</div><div class="author-box">
+  <img src="../profile.png" alt="Dr. Sunny Okonkwo" />
+  <div>
+    <h4>Dr. Sunny Okonkwo</h4>
+    <p>AI Strategist · Decision Intelligence Expert · Digital Transformation Leader. Head of Data Analytics at one of Africa's largest energy and utility companies. Author of 7 books including the #1 International Bestseller <em>The AI Alchemist</em>.</p>
+  </div>
+</div>
+</div>
+<div class="related-posts">
+  <h2>More From Dr. Sunny Okonkwo</h2>
+  <div class="related-grid">
+    <a href="powertpoint-to-production.html" class="related-card"><span class="rc-tag">AI Operations</span><h3>From PowerPoint to Production: Moving AI Into Daily Operations</h3><p>The operational gap that kills AI programmes.</p></a>
+    <a href="data-governance-energy-leaders.html" class="related-card"><span class="rc-tag">Governance</span><h3>What Energy Leaders Get Wrong About Data Governance</h3><p>Five governance mistakes that undermine analytics.</p></a>
+    <a href="ai-readiness-framework.html" class="related-card"><span class="rc-tag">Framework</span><h3>The 5-Step AI Readiness Framework for Energy Executives</h3><p>Assess and build your organisation's AI readiness.</p></a>
+  </div>
+</div>
+<footer>
+  <span>© 2026 Dr. Sunny Okonkwo · <a href="../index.html">drsunnyokonkwo.com</a></span>
+  <span><a href="mailto:sunnyo@drsunnyokonkwo.com">sunnyo@drsunnyokonkwo.com</a> · <a href="../consulting.html">Consulting</a></span>
+</footer>
+</body>
+</html>

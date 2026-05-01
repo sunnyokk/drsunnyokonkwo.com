@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Most executive dashboards are never used. Dr. Sunny Okonkwo explains the design principles that make the difference between a dashboard that changes decisions and one that collects dust.">
+<meta name="keywords" content="executive dashboard design, AI dashboard, leadership analytics, decision intelligence dashboard, Dr Sunny Okonkwo">
+<title>How to Build an Executive AI Dashboard That Leaders Actually Use | Dr. Sunny Okonkwo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9973B;--gold-dim:rgba(201,151,59,0.12);--gold-border:rgba(201,151,59,0.35);--dark:#080808;--dark2:#0F0F0F;--dark3:#161616;--dark4:#1E1E1E;--border:rgba(201,151,59,0.18);--text:#EDE7DA;--muted:rgba(237,231,218,0.55);--muted2:rgba(237,231,218,0.78);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--gold)}
+nav{position:fixed;top:0;width:100%;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw;background:rgba(8,8,8,0.95);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:1rem;color:var(--gold);text-decoration:none;font-weight:600}
+.nav-logo span{font-weight:400;font-style:italic}
+.nav-back{font-size:0.78rem;color:var(--muted);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}
+.nav-back:hover{color:var(--gold)}
+.article-hero{padding:8rem 5vw 4rem;max-width:800px;margin:0 auto}
+.article-tag{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.article-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem}
+.article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;padding:1.2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:2.5rem}
+.article-meta span{font-size:0.8rem;color:var(--muted)}
+.article-meta strong{color:var(--gold);font-weight:400}
+.article-body{max-width:800px;margin:0 auto;padding:0 5vw 6rem}
+.article-body h2{font-family:var(--serif);font-size:1.7rem;font-weight:700;margin:2.5rem 0 1rem;color:var(--text)}
+.article-body h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:2rem 0 0.8rem;color:var(--gold)}
+.article-body p{font-size:0.97rem;color:var(--muted2);line-height:1.9;margin-bottom:1.3rem}
+.article-body strong{color:var(--text);font-weight:500}
+.article-body ul,.article-body ol{margin:1rem 0 1.3rem 1.5rem;color:var(--muted2)}
+.article-body li{margin-bottom:0.5rem;font-size:0.95rem;line-height:1.8}
+.article-body blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:var(--dark3);border-radius:0 4px 4px 0}
+.article-body blockquote p{color:var(--muted2);font-style:italic;margin:0}
+.cta-box{background:var(--dark3);border:0.5px solid var(--gold-border);padding:2.5rem;border-radius:2px;margin:3rem 0;text-align:center}
+.cta-box h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:0.8rem}
+.cta-box p{color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;max-width:50ch;margin-left:auto;margin-right:auto}
+.btn-gold{display:inline-block;padding:0.8rem 1.8rem;background:var(--gold);color:var(--dark);text-decoration:none;font-weight:500;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:1px;transition:opacity 0.2s;margin:0.3rem}
+.btn-gold:hover{opacity:0.85}
+.btn-ghost{display:inline-block;padding:0.8rem 1.8rem;border:1px solid var(--gold-border);color:var(--gold);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:1px;transition:border-color 0.2s}
+.btn-ghost:hover{border-color:var(--gold)}
+.author-box{display:flex;gap:1.5rem;align-items:flex-start;padding:2rem;background:var(--dark3);border:0.5px solid var(--border);border-radius:2px;margin:3rem 0}
+.author-box img{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;flex-shrink:0}
+.author-box h4{font-family:var(--serif);font-size:1rem;margin-bottom:0.3rem}
+.author-box p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+.related-posts{padding:4rem 5vw;background:var(--dark2);border-top:0.5px solid var(--border)}
+.related-posts h2{font-family:var(--serif);font-size:1.6rem;margin-bottom:2rem;text-align:center}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+.related-card{background:var(--dark3);border:0.5px solid var(--border);padding:1.5rem;border-radius:2px;text-decoration:none;display:block;transition:border-color 0.2s}
+.related-card:hover{border-color:var(--gold)}
+.related-card .rc-tag{font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;display:block}
+.related-card h3{font-family:var(--serif);font-size:1rem;color:var(--text);line-height:1.4;margin-bottom:0.5rem}
+.related-card p{font-size:0.78rem;color:var(--muted);line-height:1.6}
+footer{padding:2rem 5vw;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;gap:0.5rem}
+footer a{color:var(--gold);text-decoration:none}
+@media(max-width:700px){.article-hero{padding:7rem 5vw 2rem}.author-box{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html"><span>Dr. </span>Sunny Okonkwo</a>
+  <a class="nav-back" href="index.html">&#8592; All Articles</a>
+</nav>
+<div class="article-hero">
+  <span class="article-tag">Analytics · Leadership</span>
+  <h1>How to Build an Executive AI Dashboard That Leaders Actually Use</h1>
+  <div class="article-meta">
+    <span>By <strong>Dr. Sunny Okonkwo</strong></span>
+    <span>26 May 2026</span>
+    <span>7 min read</span>
+    <span>Dashboards · Decision Intelligence · Leadership</span>
+  </div>
+</div>
+<div class="article-body">
+<p>I have built a significant number of executive dashboards over the course of my career. I have also watched a significant number of executive dashboards go unused. The gap between the two outcomes is not a design gap or a technology gap. It is a decision gap — the failure to connect what the dashboard shows to a specific decision that a specific leader needs to make.</p>
+
+<p>Most dashboards are built from the data up. The analyst asks: what data do we have? What can we visualise? What looks interesting? The result is a comprehensive, technically impressive display of organisational performance that tells leaders a great deal about what has happened and almost nothing about what to do. Leaders look at it once, acknowledge that it is impressive, and return to making decisions the way they always have — from experience, intuition, and the informal information networks that actually drive most organisational decision-making.</p>
+
+<h2>The Seven Principles of Dashboards Leaders Use</h2>
+
+<h3>1. Start With One Decision</h3>
+<p>Every effective executive dashboard I have built started with a single question: what is the one decision this leader makes regularly where better information would produce a better outcome? Not all the decisions. One decision. The discipline of starting here forces a specificity that prevents the sprawling, everything-included design that makes most dashboards useless.</p>
+
+<h3>2. Show the Next Action, Not Just the Current State</h3>
+<p>The fundamental limitation of most dashboards is that they show what is happening without indicating what should be done about it. An effective executive dashboard answers both questions. Network fault rate is 23 percent above baseline in the northern region — and the recommended intervention is a targeted maintenance deployment to the three highest-risk feeders, pre-populated for approval. The information and the action are presented together, reducing the cognitive load on the decision maker and dramatically increasing the probability that action is taken.</p>
+
+<blockquote><p>A dashboard that shows a problem without indicating a response is not a decision support tool. It is an anxiety generator. Leaders who see problems they cannot immediately act on either ignore the dashboard or become paralysed by it. Neither outcome is useful.</p></blockquote>
+
+<h3>3. Use the Leader&#39;s Language, Not the Analyst&#39;s</h3>
+<p>Data teams communicate naturally in percentages, indices, and statistical measures. Executive leaders communicate in operational outcomes — revenue, cost, customer impact, risk. Every metric on an executive dashboard should be expressed in the language the leader uses to manage their business. Transformer failure rate is an analyst metric. Number of customers at risk of unplanned outage this week is an executive metric. The underlying calculation may be identical. The communication is entirely different.</p>
+
+<h3>4. Show Fewer Numbers, More Clearly</h3>
+<p>The instinct of most data teams is to include everything relevant. The result is a dashboard that requires twenty minutes to read and ten years of operational experience to interpret. Effective executive dashboards show five to seven key metrics maximum — the ones that, together, give a complete picture of whether the organisation is performing as it should. Everything else is available on drill-down, for the analyst who needs it. The executive sees the signal. The detail is accessible but not intrusive.</p>
+
+<h3>5. Design for the Decision Moment</h3>
+<p>When does the leader make the decisions this dashboard is meant to support? At 7am before the morning operations review. At 6pm reviewing the day&#39;s performance. Before a board meeting. The dashboard should be designed to deliver its critical information in the format and at the time that matches these decision moments — on a mobile device for the executive reviewing performance on the way to a meeting, on a large screen for the operations review, as a one-page PDF summary for the board pack.</p>
+
+<h3>6. Build Trust Before Complexity</h3>
+<p>Executive trust in data is built incrementally. A dashboard that shows three metrics the leader can independently verify — and that consistently proves accurate — builds more trust than a sophisticated AI-powered system whose outputs the leader cannot validate. Start simple. Prove accuracy. Add complexity only as trust grows. This sequencing is counterintuitive for data teams eager to demonstrate technical capability. It is essential for building the adoption that makes that capability operationally valuable.</p>
+
+<h3>7. Make It Someone&#39;s Job to Act on What It Shows</h3>
+<p>The final principle is the most important and the most frequently overlooked. Every alert, every recommendation, every performance deviation flagged by the dashboard must have a named owner whose job it is to respond. A dashboard without accountability is a reporting tool. A dashboard with accountability is a management system. The technology is identical. The operational impact is entirely different.</p>
+
+<h2>The Dashboard That Changed How We Operated</h2>
+<p>The most effective dashboard I built in my career at Ikeja Electric was not the most technically sophisticated. It was a seven-metric morning briefing view that told the regional operations directors, before 7am every day, which parts of the network were most likely to cause a customer-impacting fault in the next 24 hours — and what the recommended preventive action was for each. Within three months of deployment, unplanned outages in the pilot regions had fallen measurably. The technology was straightforward. The discipline of connecting data to a specific decision, made by a specific person, at a specific moment — that was what made it work.</p>
+<div class="cta-box">
+  <h3>Work With Dr. Sunny Okonkwo</h3>
+  <p>Looking to deploy AI in your organisation or book a keynote speaker? Let's talk.</p>
+  <a href="https://calendly.com/okonkwosunny/discovery-call-with-dr-sunny-okonkwo" class="btn-gold" target="_blank">&#128197; Book a Free Discovery Call</a>
+  <a href="../consulting.html" class="btn-ghost">View Consulting Packages</a>
+</div>
+<div class="author-box">
+  <img src="../profile.png" alt="Dr. Sunny Okonkwo" />
+  <div>
+    <h4>Dr. Sunny Okonkwo</h4>
+    <p>AI Strategist · Decision Intelligence Expert · Digital Transformation Leader. Head of Data Analytics at one of Africa's largest energy and utility companies. Author of 7 books including the #1 International Bestseller <em>The AI Alchemist</em>. Keynote speaker at IIBA, Big Data Summit Canada, Global Summit, and UNICAF.</p>
+  </div>
+</div>
+</div>
+<div class="related-posts">
+  <h2>More From Dr. Sunny Okonkwo</h2>
+  <div class="related-grid">
+    <a href="decision-intelligence-vs-bi.html" class="related-card"><span class="rc-tag">Decision Intelligence</span><h3>Decision Intelligence vs Business Intelligence</h3><p>The difference that determines whether your data investment changes anything.</p></a>
+    <a href="ai-readiness-framework.html" class="related-card"><span class="rc-tag">Framework</span><h3>The 5-Step AI Readiness Framework</h3><p>Assess your organisation&#39;s AI readiness.</p></a>
+    <a href="powertpoint-to-production.html" class="related-card"><span class="rc-tag">AI Operations</span><h3>From PowerPoint to Production</h3><p>Moving AI into daily operations.</p></a>
+  </div>
+</div>
+<footer>
+  <span>&#169; 2026 Dr. Sunny Okonkwo &middot; <a href="../index.html">drsunnyokonkwo.com</a></span>
+  <span><a href="mailto:sunnyo@drsunnyokonkwo.com">sunnyo@drsunnyokonkwo.com</a> &middot; <a href="../consulting.html">Consulting</a></span>
+</footer>
+</body>
+</html>

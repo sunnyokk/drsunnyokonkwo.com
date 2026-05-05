@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Real State of Power | Dr. Sunny Okonkwo</title>
+<meta name="description" content="A monthly intelligence report on the state of electricity in Nigeria by Dr. Sunny Okonkwo. Independent analysis of the national grid, Lagos power, GenCo performance, and sector reform.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1f3d;
+    --navy-light: #1a3559;
+    --gold: #c9a14a;
+    --gold-light: #e2bd6a;
+    --cream: #f7f3eb;
+    --paper: #fdfcf9;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #8a8a8a;
+    --line: #e5e0d4;
+    --line-soft: #f0ece2;
+    --green: #2d6a4f;
+    --green-bg: #e6f0ec;
+    --blue-bg: #e8edf5;
+  }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* HEADER */
+  .masthead {
+    border-bottom: 3px double var(--navy);
+    padding: 48px 0 32px;
+    text-align: center;
+  }
+  .masthead-eyebrow {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .masthead-title {
+    font-size: 44px;
+    font-weight: 400;
+    color: var(--navy);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .masthead-byline {
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .masthead-tagline {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 14px 0;
+    margin-top: 32px;
+    border-radius: 4px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    font-family: 'Helvetica', sans-serif;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold-light); }
+
+  /* HERO STATEMENT */
+  .hero-statement {
+    padding: 56px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-statement h2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.4;
+    max-width: 720px;
+    margin: 0 auto 20px;
+    font-style: italic;
+  }
+  .hero-statement p {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    border-bottom: 1px solid var(--navy);
+    padding-bottom: 12px;
+    margin: 56px 0 32px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .section-title {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  .section-meta {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1.5px;
+  }
+
+  /* GENERATE PANEL */
+  .generate-panel {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 36px;
+    margin-bottom: 32px;
+  }
+  .panel-eyebrow {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .panel-title {
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .panel-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .edition-toggle {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .toggle-btn {
+    flex: 1;
+    min-width: 220px;
+    padding: 18px 20px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    font-family: 'Georgia', serif;
+  }
+  .toggle-btn:hover {
+    border-color: var(--gold);
+  }
+  .toggle-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--cream);
+  }
+  .toggle-btn .label {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .toggle-btn .desc {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .toggle-btn.active .desc { color: var(--cream); }
+
+  .focus-field {
+    margin-bottom: 24px;
+  }
+  .focus-field label {
+    display: block;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .focus-field textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--paper);
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.6;
+  }
+  .focus-field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .action-btn {
+    padding: 16px 20px;
+    background: var(--navy);
+    color: var(--cream);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .action-btn:hover {
+    background: var(--navy-light);
+    transform: translateY(-1px);
+  }
+  .action-btn.gold {
+    background: var(--gold);
+  }
+  .action-btn.gold:hover {
+    background: var(--gold-light);
+  }
+  .action-btn .arrow {
+    font-size: 16px;
+  }
+
+  /* SCHEDULE CARDS */
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .schedule-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px;
+  }
+  .schedule-card.edition-1 { border-top: 4px solid var(--navy); }
+  .schedule-card.edition-2 { border-top: 4px solid var(--gold); }
+
+  .schedule-eyebrow {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .edition-1 .schedule-eyebrow { color: var(--navy); }
+  .edition-2 .schedule-eyebrow { color: var(--gold); }
+
+  .schedule-title {
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .schedule-date {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .schedule-desc {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .schedule-link {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    cursor: pointer;
+  }
+  .schedule-link:hover { color: var(--gold); }
+
+  /* RULES */
+  .rules-section {
+    background: var(--cream);
+    padding: 36px;
+    border-radius: 6px;
+    margin-bottom: 32px;
+  }
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .rule-item {
+    padding-left: 20px;
+    border-left: 2px solid var(--gold);
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .rule-item strong {
+    color: var(--navy);
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  /* DISTRIBUTION */
+  .dist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .dist-item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .dist-name {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .dist-type {
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 3px double var(--navy);
+    padding: 40px 0;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .footer-byline {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto 16px;
+    line-height: 1.7;
+  }
+  .footer-links {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .footer-links a {
+    color: var(--navy);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 16px 24px;
+    border-radius: 4px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 13px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transform: translateY(120%);
+    transition: transform 0.3s;
+    max-width: 360px;
+    z-index: 1000;
+  }
+  .toast.show { transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .masthead-title { font-size: 32px; }
+    .container { padding: 0 16px; }
+    nav ul { gap: 16px; }
+    .generate-panel, .rules-section { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-eyebrow">Independent Energy Intelligence</div>
+    <h1 class="masthead-title">The Real State of Power</h1>
+    <div class="masthead-byline">A monthly report by Dr. Sunny Okonkwo</div>
+    <div class="masthead-tagline">Practitioner · Researcher · Energy Commentator</div>
+    <nav>
+      <ul>
+        <li><a onclick="scrollTo('generate')">Generate Edition</a></li>
+        <li><a onclick="scrollTo('schedule')">Schedule</a></li>
+        <li><a onclick="scrollTo('rules')">Editorial Rules</a></li>
+        <li><a onclick="scrollTo('distribution')">Distribution</a></li>
+        <li><a href="https://drsunnyokonkwo.com" target="_blank">Website</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <section class="hero-statement">
+    <h2>"Nigeria does not have an electricity shortage. It has a ten percent delivery rate on the electricity it needs."</h2>
+    <p>The Real State of Power publishes twice every month with the data, analysis, and straight thinking that the sector's official communications rarely offer. No managed narratives. No political softening. Just ground truth from someone who lives inside this industry every day.</p>
+  </section>
+
+  <section id="generate">
+    <div class="section-header">
+      <div class="section-title">Generate New Edition</div>
+      <div class="section-meta">Powered by Claude</div>
+    </div>
+
+    <div class="generate-panel">
+      <div class="panel-eyebrow">Step 1 of 1</div>
+      <div class="panel-title">Build Your Next Edition</div>
+      <div class="panel-sub">Select edition type, add any ground-level focus, then click to generate.</div>
+
+      <div class="edition-toggle">
+        <button class="toggle-btn active" id="btn1" onclick="selectEdition(1)">
+          <div class="label">First Monday</div>
+          <div class="desc">Edition 1 — Closing Analysis</div>
+        </button>
+        <button class="toggle-btn" id="btn2" onclick="selectEdition(2)">
+          <div class="label">Last Monday</div>
+          <div class="desc">Edition 2 — Forward Outlook</div>
+        </button>
+      </div>
+
+      <div class="focus-field">
+        <label for="focusInput">Optional ground-level focus for this edition</label>
+        <textarea id="focusInput" placeholder="e.g. Lagos signed a new 60MW deal, the grid collapsed twice this week, NRS exited the grid..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="action-btn" onclick="generateDraft()">
+          Generate Full Draft <span class="arrow">→</span>
+        </button>
+        <button class="action-btn gold" onclick="generatePDF()">
+          Generate PDF Version <span class="arrow">→</span>
+        </button>
+        <button class="action-btn" onclick="generateLinkedIn()">
+          Generate LinkedIn Post <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="section-header">
+      <div class="section-title">Publication Schedule</div>
+      <div class="section-meta">Twice every month</div>
+    </div>
+
+    <div class="schedule-grid">
+      <div class="schedule-card edition-1">
+        <div class="schedule-eyebrow">Edition One</div>
+        <div class="schedule-title">Closing Analysis</div>
+        <div class="schedule-date">First Monday of every month · 8am Lagos time</div>
+        <div class="schedule-desc">Previous month closing data, national grid performance, GenCo and DisCo breakdown, top sector developments, and the systemic read.</div>
+        <a class="schedule-link" href="https://www.google.com/calendar/event?eid=MWRoZ2NyYzNqbHM0bnVhOTJvN3VrYTFjczBfMjAyNjA1MDRUMDcwMDAwWiBva29ua3dvc3VubnlAbQ" target="_blank">Open in Calendar →</a>
+      </div>
+
+      <div class="schedule-card edition-2">
+        <div class="schedule-eyebrow">Edition Two</div>
+        <div class="schedule-title">Forward Outlook</div>
+        <div class="schedule-date">Last Monday of every month · 8am Lagos time</div>
+        <div class="schedule-desc">Mid-month grid developments, breaking sector news, Lagos electricity market watch, and the forward outlook for the coming month.</div>
+        <a class="schedule-link" href="https://www.google.com/calendar/event?eid=ODMwNzFmOTMxOWRhMWM5bnVjZTZva25qcWNfMjAyNjA1MjVUMDcwMDAwWiBva29ua3dvc3VubnlAbQ" target="_blank">Open in Calendar →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="section-header">
+      <div class="section-title">Editorial Rules</div>
+      <div class="section-meta">Active on every edition</div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-grid">
+        <div class="rule-item">
+          <strong>No Dashes</strong>
+          Formal punctuation only throughout the entire text.
+        </div>
+        <div class="rule-item">
+          <strong>Narrative Prose</strong>
+          No bullet points in body. Long-form, narrative-driven writing.
+        </div>
+        <div class="rule-item">
+          <strong>Banned Vocabulary</strong>
+          No leveraging, ultimately, delve, seamlessly, transformative, robust, streamline, paradigm, cutting-edge.
+        </div>
+        <div class="rule-item">
+          <strong>Human Authority Style</strong>
+          Lived-experience cues. Grounded spoken rhythm. Punchy short standalone lines for emphasis.
+        </div>
+        <div class="rule-item">
+          <strong>No Internal Data</strong>
+          Public sources only. No employer-internal information referenced.
+        </div>
+        <div class="rule-item">
+          <strong>Six-Section Structure</strong>
+          Before the Numbers. The Month in Numbers. What Actually Happened. The Systemic Read. What Needs to Change. One Number That Matters.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="distribution">
+    <div class="section-header">
+      <div class="section-title">Distribution Stack</div>
+      <div class="section-meta">Five-channel reach</div>
+    </div>
+
+    <div class="dist-grid">
+      <div class="dist-item">
+        <div class="dist-name">LinkedIn</div>
+        <div class="dist-type">Long-form Article</div>
+      </div>
+      <div class="dist-item">
+        <div class="dist-name">PDF Newsletter</div>
+        <div class="dist-type">Branded Download</div>
+      </div>
+      <div class="dist-item">
+        <div class="dist-name">BusinessDay</div>
+        <div class="dist-type">Op-Ed Submission</div>
+      </div>
+      <div class="dist-item">
+        <div class="dist-name">Premium Times</div>
+        <div class="dist-type">Opinion Piece</div>
+      </div>
+      <div class="dist-item">
+        <div class="dist-name">Nairaland</div>
+        <div class="dist-type">Business Forum</div>
+      </div>
+      <div class="dist-item">
+        <div class="dist-name">Twitter / X</div>
+        <div class="dist-type">Key Number Drop</div>
+      </div>
+      <div class="dist-item">
+        <div class="dist-name">WhatsApp</div>
+        <div class="dist-type">Broadcast List</div>
+      </div>
+      <div class="dist-item">
+        <div class="dist-name">Substack</div>
+        <div class="dist-type">Subscriber Archive</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-byline">
+      Dr. Sunny Okonkwo is a data scientist, energy sector strategist, and researcher with over fifteen years of experience across Nigeria's energy, telecommunications, and banking sectors. He writes The Real State of Power in his personal capacity as an independent commentator on energy, data, and the future of power in Africa.
+    </div>
+    <div class="footer-links">
+      <a href="https://drsunnyokonkwo.com" target="_blank">drsunnyokonkwo.com</a> ·
+      <a href="https://linkedin.com/in/sunnyokonkwo" target="_blank">LinkedIn</a> ·
+      <a href="mailto:sunnyokonkwo@hotmail.co.uk">Email</a>
+    </div>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Prompt copied. Now paste it into Claude.</div>
+
+<script>
+  let selectedEdition = 1;
+
+  function selectEdition(n) {
+    selectedEdition = n;
+    document.getElementById('btn1').classList.toggle('active', n === 1);
+    document.getElementById('btn2').classList.toggle('active', n === 2);
+  }
+
+  function getFocus() {
+    return document.getElementById('focusInput').value.trim();
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  function copyAndOpenClaude(prompt) {
+    navigator.clipboard.writeText(prompt).then(() => {
+      showToast('Prompt copied. Opening Claude in a new tab.');
+      setTimeout(() => {
+        window.open('https://claude.ai/new', '_blank');
+      }, 800);
+    }).catch(() => {
+      const textarea = document.createElement('textarea');
+      textarea.value = prompt;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showToast('Prompt copied. Opening Claude.');
+      setTimeout(() => {
+        window.open('https://claude.ai/new', '_blank');
+      }, 800);
+    });
+  }
+
+  function buildBasePrompt(editionNum) {
+    const editionType = editionNum === 1
+      ? 'Edition 1 (First Monday Closing Analysis)'
+      : 'Edition 2 (Last Monday Forward Outlook)';
+
+    const searchFocus = editionNum === 1
+      ? `1. Latest Nigerian national grid generation data (peak MW, average MW, week-on-week movement)
+2. Named GenCo performance (Mainstream, SPG, Azura, NIPP, Transcorp, Delta, Egbin, Okpai, Omotosho, Ihovbor, Afam) and grid share percentages
+3. Top 3 to 4 sector news items of the month (regulatory, ministerial, Lagos market, captive power exits, safety incidents)
+4. DisCo losses, GenCo debt, and Lagos power developments
+5. NERC announcements, tariff changes, and policy moves`
+      : `1. Mid-month Nigerian grid developments and any collapse incidents
+2. Latest weekly generation data (peak MW, average MW, named GenCo gains and losses, grid share percentages)
+3. Breaking sector news including ministerial appointments, regulatory rulings, tariff changes
+4. Lagos State electricity market progress, sub-national power deals, embedded generation, captive power exits
+5. Upcoming policy decisions, bond issuances, GenCo debt status, and forward outlook for the next 30 days
+6. Energy transition developments, renewable projects, and mini-grid licensing`;
+
+    return `Please generate the full draft of The Real State of Power - ${editionType} for this month. Search the web for:
+${searchFocus}
+
+Write the complete edition in my voice (Dr. Sunny Okonkwo) following all my established writing rules:
+- No dashes anywhere, formal punctuation only
+- No bullet points in prose, narrative-driven long-form writing
+- Banned vocabulary: leveraging, ultimately, delve, seamlessly, transformative, robust, streamline, paradigm, cutting-edge, game-changer
+- Human Authority Style with lived-experience cues, grounded spoken rhythm, punchy short standalone lines
+- No Ikeja Electric internal data, public sources and Lagos-level analysis only
+
+Structure: Before the Numbers, The Month in Numbers, What Actually Happened This Month, The Systemic Read, What Needs to Change, One Number That Matters.`;
+  }
+
+  function generateDraft() {
+    const focus = getFocus();
+    let prompt = buildBasePrompt(selectedEdition);
+    if (focus) {
+      prompt += `\n\nGround-level context to weave in: ${focus}`;
+    }
+    copyAndOpenClaude(prompt);
+  }
+
+  function generatePDF() {
+    const focus = getFocus();
+    let prompt = buildBasePrompt(selectedEdition);
+    prompt += `\n\nAfter writing the full edition, format it as a professionally branded PDF ready for download and distribution. Use my byline, the report title in deep navy and gold, and clean editorial formatting.`;
+    if (focus) {
+      prompt += `\n\nGround-level context to include: ${focus}`;
+    }
+    copyAndOpenClaude(prompt);
+  }
+
+  function generateLinkedIn() {
+    const focus = getFocus();
+    let prompt = buildBasePrompt(selectedEdition);
+    prompt += `\n\nAfter writing the full edition, also produce a LinkedIn long-form version with a strong opening hook, clean section breaks, and a closing call to action that drives engagement and follows.`;
+    if (focus) {
+      prompt += `\n\nGround-level context to include: ${focus}`;
+    }
+    copyAndOpenClaude(prompt);
+  }
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+</body>
+</html>

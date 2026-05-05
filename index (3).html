@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Real State of Power | Dr. Sunny Okonkwo</title>
+<meta name="description" content="A monthly intelligence report on the real state of electricity in Nigeria. Independent analysis of the national grid, Lagos power, GenCo performance, and sector reform by Dr. Sunny Okonkwo.">
+<meta name="author" content="Dr. Sunny Okonkwo">
+<meta property="og:title" content="The Real State of Power">
+<meta property="og:description" content="Monthly intelligence on Nigerian electricity by Dr. Sunny Okonkwo.">
+<meta property="og:type" content="website">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1f3d;
+    --navy-light: #1a3559;
+    --gold: #c9a14a;
+    --gold-light: #e2bd6a;
+    --cream: #f7f3eb;
+    --paper: #fdfcf9;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #8a8a8a;
+    --line: #e5e0d4;
+  }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .container-narrow {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    border-bottom: 3px double var(--navy);
+    padding: 56px 0 36px;
+    text-align: center;
+  }
+  .masthead-eyebrow {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .masthead-title {
+    font-size: 52px;
+    font-weight: 400;
+    color: var(--navy);
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .masthead-byline {
+    font-size: 16px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .masthead-tagline {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 14px 0;
+    margin-top: 28px;
+    border-radius: 4px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    font-family: 'Helvetica', sans-serif;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-quote {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.4;
+    max-width: 740px;
+    margin: 0 auto 20px;
+    font-style: italic;
+  }
+  .hero-attribution {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-description {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    border-bottom: 1px solid var(--navy);
+    padding-bottom: 14px;
+    margin: 56px 0 36px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .section-title {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  .section-meta {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1.5px;
+  }
+
+  /* LATEST EDITION (FEATURED) */
+  .featured-edition {
+    background: var(--cream);
+    border-left: 6px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 40px 44px;
+    margin-bottom: 44px;
+  }
+  .featured-eyebrow {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .featured-title {
+    font-size: 32px;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+  .featured-meta {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .featured-excerpt {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .featured-link {
+    display: inline-block;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cream);
+    background: var(--navy);
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .featured-link:hover {
+    background: var(--navy-light);
+    transform: translateY(-1px);
+  }
+
+  /* EDITION ARCHIVE */
+  .edition-list {
+    display: grid;
+    gap: 24px;
+  }
+  .edition-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px 32px;
+    transition: all 0.2s;
+  }
+  .edition-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10, 31, 61, 0.06);
+  }
+  .edition-card-eyebrow {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .edition-card-title {
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .edition-card-title a {
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .edition-card-title a:hover {
+    color: var(--gold);
+  }
+  .edition-card-meta {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .edition-card-excerpt {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--cream);
+    border-radius: 8px;
+    color: var(--ink-soft);
+  }
+  .empty-state-title {
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .empty-state-text {
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  /* ABOUT */
+  .about-section {
+    background: var(--cream);
+    padding: 48px 44px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+  }
+  .about-text {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .about-text:last-child { margin-bottom: 0; }
+
+  /* SUBSCRIBE */
+  .subscribe-section {
+    text-align: center;
+    padding: 48px 24px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .subscribe-title {
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .subscribe-text {
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+  }
+  .subscribe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .sub-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .sub-btn.primary {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .sub-btn.primary:hover { background: var(--navy-light); }
+  .sub-btn.secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+  }
+  .sub-btn.secondary:hover {
+    background: var(--navy);
+    color: var(--cream);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 3px double var(--navy);
+    padding: 44px 0;
+    margin-top: 56px;
+    text-align: center;
+  }
+  .footer-byline {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 660px;
+    margin: 0 auto 18px;
+    line-height: 1.7;
+  }
+  .footer-links {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .footer-links a {
+    color: var(--navy);
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copyright {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-top: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
+    .masthead-title { font-size: 36px; }
+    .featured-edition, .about-section { padding: 28px 24px; }
+    .featured-title { font-size: 24px; }
+    .hero-quote { font-size: 22px; }
+    .container { padding: 0 18px; }
+    nav ul { gap: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-eyebrow">Independent Energy Intelligence</div>
+    <h1 class="masthead-title">The Real State of Power</h1>
+    <div class="masthead-byline">A monthly report by Dr. Sunny Okonkwo</div>
+    <div class="masthead-tagline">Practitioner · Researcher · Energy Commentator</div>
+    <nav>
+      <ul>
+        <li><a href="#latest">Latest Edition</a></li>
+        <li><a href="#archive">Archive</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://drsunnyokonkwo.com" target="_blank">Main Website</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <section class="hero">
+    <div class="hero-quote">"Nigeria does not have an electricity shortage. It has a ten percent delivery rate on the electricity it needs."</div>
+    <div class="hero-attribution">— From Edition One</div>
+    <div class="hero-description">A monthly publication that cuts through the official noise around Nigerian electricity. The Real State of Power publishes twice every month with the data, analysis, and straight thinking that shape decisions in boardrooms, ministries, and policy circles across Lagos, Abuja, and beyond.</div>
+  </section>
+
+  <!-- LATEST EDITION (FEATURED) -->
+  <section id="latest">
+    <div class="section-header">
+      <div class="section-title">Latest Edition</div>
+      <div class="section-meta">Updated monthly</div>
+    </div>
+
+    <article class="featured-edition">
+      <div class="featured-eyebrow">Edition One · April 2026 · Closing Analysis</div>
+      <h2 class="featured-title">Nigeria Without a Power Minister: A Sector at Crossroads</h2>
+      <div class="featured-meta">Published 4 May 2026 · 8 min read</div>
+      <p class="featured-excerpt">Nigeria woke up on April 30 without a Power Minister for the first time in three years. Adebayo Adelabu stepped down to chase a governorship ambition, leaving behind a sector still searching for its footing. Lagos signed a 60 MW deal that quietly redefines how power should be paid for. The Nigerian Revenue Service walked away from the grid entirely. And the casualty count for 2025 climbed to 192. April was a month of departures and decisions. Here is what they mean for the lights staying on.</p>
+      <a href="editions/may-2026-edition-1.html" class="featured-link">Read Full Edition →</a>
+    </article>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section id="archive">
+    <div class="section-header">
+      <div class="section-title">Edition Archive</div>
+      <div class="section-meta">All published reports</div>
+    </div>
+
+    <div class="edition-list" id="archiveList">
+
+      <!-- Each edition is a card. To add a new edition, copy this block and update the values. -->
+      <article class="edition-card">
+        <div class="edition-card-eyebrow">Edition One · April 2026</div>
+        <h3 class="edition-card-title"><a href="editions/may-2026-edition-1.html">Nigeria Without a Power Minister: A Sector at Crossroads</a></h3>
+        <div class="edition-card-meta">Published 4 May 2026 · Closing Analysis</div>
+        <p class="edition-card-excerpt">Adelabu's exit. The Lagos 60 MW deal. NRS walks from the grid. The casualty count climbs to 192. A full read of where the sector stood at the close of April.</p>
+      </article>
+
+      <!-- More editions appear here as they publish -->
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-title">About This Publication</div>
+    </div>
+
+    <div class="about-section">
+      <p class="about-text">The Real State of Power is an independent monthly publication by Dr. Sunny Okonkwo, a data scientist and energy sector strategist with over fifteen years of experience across Nigeria's energy, telecommunications, and banking industries. It exists to cut through the noise that surrounds Nigerian electricity coverage and provide readers with data, analysis, and ground-level intelligence that decision-makers can actually use.</p>
+      <p class="about-text">Every first Monday of the month, the publication releases its Closing Analysis, a deep look at the previous month's grid performance, sector developments, and systemic trends. Every last Monday, it publishes its Forward Outlook, covering mid-month developments, breaking sector news, and the picture for the coming month.</p>
+      <p class="about-text">The publication serves three audiences simultaneously. Policy makers and regulators looking for honest sector intelligence. Business leaders making decisions that depend on Nigerian power reliability. Energy professionals who need a clear-eyed read on where the market is moving. The writing is independent, the analysis is direct, and the conclusions are drawn from public data and the lived experience of someone who has spent his career inside this sector.</p>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe-section">
+    <h2 class="subscribe-title">Stay Connected</h2>
+    <p class="subscribe-text">The Real State of Power publishes twice every month. Follow on LinkedIn for new editions delivered to your feed, or visit the main website for more from Dr. Sunny Okonkwo.</p>
+    <div class="subscribe-buttons">
+      <a href="https://linkedin.com/in/sunnyokonkwo" target="_blank" class="sub-btn primary">Follow on LinkedIn</a>
+      <a href="https://drsunnyokonkwo.com" target="_blank" class="sub-btn secondary">Main Website</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-byline">
+      Dr. Sunny Okonkwo is a data scientist, energy sector strategist, and researcher with over fifteen years of experience across Nigeria's energy, telecommunications, and banking sectors. The Real State of Power is published in his personal capacity as an independent commentator on energy, data, and the future of power in Africa.
+    </div>
+    <div class="footer-links">
+      <a href="https://drsunnyokonkwo.com" target="_blank">drsunnyokonkwo.com</a> ·
+      <a href="https://linkedin.com/in/sunnyokonkwo" target="_blank">LinkedIn</a> ·
+      <a href="mailto:sunnyokonkwo@hotmail.co.uk">Contact</a>
+    </div>
+    <div class="footer-copyright">© 2026 Dr. Sunny Okonkwo · All rights reserved</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

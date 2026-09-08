@@ -34,14 +34,14 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --gold:#F59E0B;--gold2:#FBB740;--gold-dim:rgba(245,158,11,0.15);
-  --dark:#FFFFFF;--dark2:#061020;--dark3:#0D1F38;--dark4:#122040;
+  --dark:#FFFFFF;--dark2:#F0F4F8;--dark3:#F5F7FA;--dark4:#FFFFFF;
   --border:rgba(245,158,11,0.18);--border2:rgba(245,158,11,0.35);
   --text:#0A1628;--muted:#4A5A72;--muted2:#2D3748;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Outfit',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth}
-body{background:var(--dark);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{ background:#FFFFFF;color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
 
 /* scrollbar */
 ::-webkit-scrollbar{width:4px}
@@ -217,7 +217,7 @@ p.lead{font-size:1rem;color:var(--muted2);line-height:1.9;max-width:60ch}
   padding:1.4rem 1.6rem;border-radius:1px;
   transition:border-color 0.25s,background 0.25s;
 }
-.pillar:hover{border-color:var(--gold);background:var(--dark4)}
+.pillar:hover{border-color:var(--gold);background:#FFFFFF}
 .pillar-hd{
   display:flex;align-items:center;gap:0.8rem;
   margin-bottom:0.5rem;
@@ -261,7 +261,7 @@ p.lead{font-size:1rem;color:var(--muted2);line-height:1.9;max-width:60ch}
   background:var(--dark2);padding:2.2rem 1.8rem;
   transition:background 0.2s;
 }
-.consult-cell:hover{background:var(--dark4)}
+.consult-cell:hover{background:#FFFFFF}
 .cn{font-size:0.68rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:0.8rem}
 .consult-cell h3{font-family:var(--serif);font-size:1.1rem;margin-bottom:0.6rem;font-weight:600}
 .consult-cell p{font-size:0.84rem;color:var(--muted);line-height:1.75}
@@ -334,7 +334,7 @@ p.lead{font-size:1rem;color:var(--muted2);line-height:1.9;max-width:60ch}
   position:relative;z-index:1;padding:1rem 1rem 0.8rem;width:100%;
 }
 .film-yr{font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:0.3rem;display:block}
-.film-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.2}
+.film-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;  Leave — text variable now handles this;line-height:1.2}
 .film-body{padding:0.8rem 1rem 1rem}
 .film-role{font-size:0.78rem;color:var(--muted)}
 .award-badge{
@@ -721,7 +721,7 @@ footer a{color:var(--gold);text-decoration:none}
       <div style="margin-top:2rem">
         <div style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">Professional Memberships</div>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
-          <span style="padding:0.3rem 0.8rem;background:var(--dark3);border:0.5px solid var(--border);color:var(--muted2);font-size:0.78rem;border-radius:1px">AAAI</span>
+          <span style="padding:0.3rem 0.8rem;background:#F5F7FA;border:0.5px solid var(--border);color:var(--muted2);font-size:0.78rem;border-radius:1px">AAAI</span>
           <span style="padding:0.3rem 0.8rem;background:var(--dark3);border:0.5px solid var(--border);color:var(--muted2);font-size:0.78rem;border-radius:1px">ACM</span>
           <span style="padding:0.3rem 0.8rem;background:var(--dark3);border:0.5px solid var(--border);color:var(--muted2);font-size:0.78rem;border-radius:1px">IEEE</span>
           <span style="padding:0.3rem 0.8rem;background:var(--dark3);border:0.5px solid var(--border);color:var(--muted2);font-size:0.78rem;border-radius:1px">IIBA</span>
@@ -845,7 +845,7 @@ footer a{color:var(--gold);text-decoration:none}
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials" class="reveal" style="background:var(--dark2)">
+<section id="testimonials" class="reveal" style="background:#F0F4F8">
   <div style="text-align:center;margin-bottom:3rem">
     <div class="tag" style="justify-content:center">Testimonials</div>
     <h2>What People Say.</h2>

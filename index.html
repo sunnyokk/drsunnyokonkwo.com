@@ -446,6 +446,85 @@ footer a{color:rgba(245,158,11,0.7);color:#F59E0B;text-decoration:none}
   section{padding:4rem 5vw}
   .nav-logo{font-size:0.9rem}
 }
+
+/* ON STAGE */
+#onstage{
+  padding:8rem 5vw;
+  background:var(--dark2);
+}
+#onstage .section-title{
+  color:#FFFFFF;
+  margin-bottom:0.5rem;
+}
+#onstage .section-sub{
+  font-size:0.95rem;
+  color:rgba(255,255,255,0.6);
+  max-width:58ch;
+  line-height:1.75;
+  margin-bottom:3rem;
+}
+.stage-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto;
+  gap:0.8rem;
+  margin-bottom:3rem;
+}
+.stage-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:2px;
+  aspect-ratio:4/3;
+  background:#0A1628;
+}
+.stage-item.stage-large{
+  grid-column:span 1;
+  grid-row:span 2;
+  aspect-ratio:auto;
+}
+.stage-item.stage-wide{
+  grid-column:span 3;
+  aspect-ratio:21/7;
+}
+.stage-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.4s ease;
+  filter:brightness(0.92);
+}
+.stage-item:hover img{
+  transform:scale(1.04);
+  filter:brightness(1);
+}
+.stage-label{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(10,22,40,0.9));
+  color:rgba(255,255,255,0.9);
+  font-size:0.72rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:1.5rem 1rem 0.8rem;
+  font-weight:500;
+}
+.stage-cta{
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+@media(max-width:768px){
+  .stage-grid{grid-template-columns:1fr 1fr}
+  .stage-item.stage-large{grid-row:span 1}
+  .stage-item.stage-wide{grid-column:span 2;aspect-ratio:16/9}
+}
+@media(max-width:480px){
+  .stage-grid{grid-template-columns:1fr}
+  .stage-item.stage-wide{grid-column:span 1}
+}
+
 </style>
 </head>
 <body>
@@ -459,6 +538,7 @@ footer a{color:rgba(245,158,11,0.7);color:#F59E0B;text-decoration:none}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#onstage">On Stage</a></li>
     <li><a href="consulting.html">Consulting</a></li>
     <li><a href="#books">Books</a></li>
     <li><a href="#films">Films</a></li>
@@ -672,6 +752,48 @@ footer a{color:rgba(245,158,11,0.7);color:#F59E0B;text-decoration:none}
 </section>
 
 <!-- CONSULTING -->
+
+<!-- ON STAGE SECTION -->
+<section id="onstage">
+  <div class="tag">On Stage</div>
+  <h2 class="section-title">Where Ideas Meet Audiences.</h2>
+  <p class="section-sub">From boardrooms to international stages — speaking to executive, professional, and academic audiences across three continents.</p>
+  <div class="stage-grid">
+    <div class="stage-item stage-large">
+      <img src="speaking-iiba.png" alt="Dr. Sunny Okonkwo speaking at IIBA Global Conference" loading="lazy">
+      <div class="stage-label">IIBA Global Conference</div>
+    </div>
+    <div class="stage-item">
+      <img src="speaking-global-summit-1.png" alt="Dr. Sunny Okonkwo at Global Summit — Technology People and a Sustainable Future" loading="lazy">
+      <div class="stage-label">Global Summit 2024</div>
+    </div>
+    <div class="stage-item">
+      <img src="speaking-unicaf-1.png" alt="Dr. Sunny Okonkwo at UNICAF — A More Inclusive Africa" loading="lazy">
+      <div class="stage-label">UNICAF 2025</div>
+    </div>
+    <div class="stage-item">
+      <img src="speaking-bigdata-canada.png" alt="Dr. Sunny Okonkwo at Big Data Summit Canada — From Data to Decisions to Impact" loading="lazy">
+      <div class="stage-label">Big Data Summit Canada</div>
+    </div>
+    <div class="stage-item">
+      <img src="speaking-global-summit-2.png" alt="Dr. Sunny Okonkwo at Global Summit — Data-Driven Transformation" loading="lazy">
+      <div class="stage-label">Global Summit 2025</div>
+    </div>
+    <div class="stage-item">
+      <img src="speaking-unicaf-2.png" alt="Dr. Sunny Okonkwo speaking at UNICAF" loading="lazy">
+      <div class="stage-label">UNICAF 2025</div>
+    </div>
+    <div class="stage-item stage-wide">
+      <img src="speaking-global-summit-3.png" alt="Dr. Sunny Okonkwo engaging with delegates at Global Summit — Leadership in a Data-Driven World" loading="lazy">
+      <div class="stage-label">Global Summit — Leadership in a Data-Driven World</div>
+    </div>
+  </div>
+  <div class="stage-cta">
+    <a href="DrSunnyOkonkwo_SpeakerKit.pdf" download class="btn-primary">Download Speaker Kit</a>
+    <a href="https://calendly.com/okonkwosunny/discovery-call-with-dr-sunny-okonkwo" target="_blank" class="btn-ghost">Enquire About Speaking</a>
+  </div>
+</section>
+
 <section id="consulting" class="reveal">
   <div style="margin-bottom:3rem">
     <div class="tag">Consulting</div>
